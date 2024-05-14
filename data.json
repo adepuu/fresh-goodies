@@ -1,0 +1,589 @@
+{
+  "favorite-products": [0, 1],
+  "cart": [
+    {
+      "productId": 0,
+      "quantity": 1000
+    }
+  ],
+  "products": [
+    {
+      "price": 0.0032,
+      "weight": 1000,
+      "name": "Beetles",
+      "category": "Exotic",
+      "imageUrl": "https://example.com/beetles.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 190,
+        "proteins": 24,
+        "fats": 9,
+        "increment": 100,
+        "carbs": 2
+      },
+      "id": 0
+    },
+    {
+      "price": 0.0033,
+      "weight": 1300,
+      "name": "Cucumber",
+      "category": "Fresh Veggie",
+      "imageUrl": "https://example.com/cucumber.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 16,
+        "proteins": 0.7,
+        "fats": 0.1,
+        "increment": 100,
+        "carbs": 3.6
+      },
+      "id": 1
+    },
+    {
+      "price": 0.0027,
+      "weight": 1200,
+      "name": "White Onion",
+      "category": "Fresh Veggie",
+      "imageUrl": "https://example.com/white_onion.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 40,
+        "proteins": 1.1,
+        "fats": 0.1,
+        "increment": 100,
+        "carbs": 9.3
+      },
+      "id": 2
+    },
+    {
+      "price": 0.004,
+      "weight": 1500,
+      "name": "Lemon",
+      "category": "Fresh Veggie",
+      "imageUrl": "https://example.com/lemon.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 29,
+        "proteins": 1.1,
+        "fats": 0.3,
+        "increment": 100,
+        "carbs": 9.3
+      },
+      "id": 3
+    },
+    {
+      "price": 0.0028,
+      "weight": 2000,
+      "name": "Potato",
+      "category": "Roots",
+      "imageUrl": "https://example.com/potato.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 77,
+        "proteins": 2,
+        "fats": 0.1,
+        "increment": 100,
+        "carbs": 17
+      },
+      "id": 4
+    },
+    {
+      "price": 0.0032,
+      "weight": 1000,
+      "name": "Fresh Garlic",
+      "category": "Spicy",
+      "imageUrl": "https://example.com/garlic.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 143,
+        "proteins": 6.5,
+        "fats": 0.5,
+        "increment": 100,
+        "carbs": 29.9
+      },
+      "id": 5
+    },
+    {
+      "price": 0.0045,
+      "weight": 500,
+      "name": "Red Chili Pepper",
+      "category": "Spicy",
+      "imageUrl": "https://example.com/red_chili_pepper.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 40,
+        "proteins": 2,
+        "fats": 0.4,
+        "increment": 100,
+        "carbs": 9
+      },
+      "id": 6
+    },
+    {
+      "price": 0.005,
+      "weight": 750,
+      "name": "Ranch Dressing",
+      "category": "Dressings",
+      "imageUrl": "https://example.com/ranch_dressing.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 145,
+        "proteins": 1,
+        "fats": 15,
+        "increment": 100,
+        "carbs": 2
+      },
+      "id": 7
+    },
+    {
+      "price": 0.006,
+      "weight": 1000,
+      "name": "Honey",
+      "category": "Sweet",
+      "imageUrl": "https://example.com/honey.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 304,
+        "proteins": 0.3,
+        "fats": 0,
+        "increment": 100,
+        "carbs": 82.4
+      },
+      "id": 8
+    },
+    {
+      "price": 0.0025,
+      "weight": 2000,
+      "name": "Carrot",
+      "category": "Roots",
+      "imageUrl": "https://example.com/carrot.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 41,
+        "proteins": 0.9,
+        "fats": 0.2,
+        "increment": 100,
+        "carbs": 9.6
+      },
+      "id": 9
+    },
+    {
+      "price": 0.0038,
+      "weight": 1500,
+      "name": "Beetroot",
+      "category": "Roots",
+      "imageUrl": "https://example.com/beetroot.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 43,
+        "proteins": 1.6,
+        "fats": 0.2,
+        "increment": 100,
+        "carbs": 10
+      },
+      "id": 10
+    },
+    {
+      "price": 0.007,
+      "weight": 1200,
+      "name": "Maple Syrup",
+      "category": "Sweet",
+      "imageUrl": "https://example.com/maple_syrup.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 260,
+        "proteins": 0,
+        "fats": 0,
+        "increment": 100,
+        "carbs": 67
+      },
+      "id": 11
+    },
+    {
+      "price": 0.0085,
+      "weight": 1000,
+      "name": "Olive Oil Dressing",
+      "category": "Dressings",
+      "imageUrl": "https://example.com/olive_oil_dressing.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 884,
+        "proteins": 0,
+        "fats": 100,
+        "increment": 100,
+        "carbs": 0
+      },
+      "id": 12
+    },
+    {
+      "price": 0.0028,
+      "weight": 1000,
+      "name": "Ginger",
+      "category": "Spicy",
+      "imageUrl": "https://example.com/ginger.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 80,
+        "proteins": 1.8,
+        "fats": 0.8,
+        "increment": 100,
+        "carbs": 18
+      },
+      "id": 13
+    },
+    {
+      "price": 0.004,
+      "weight": 500,
+      "name": "Balsamic Vinegar",
+      "category": "Dressings",
+      "imageUrl": "https://example.com/balsamic_vinegar.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 88,
+        "proteins": 0.5,
+        "fats": 0,
+        "increment": 100,
+        "carbs": 17
+      },
+      "id": 14
+    },
+    {
+      "price": 0.0055,
+      "weight": 1500,
+      "name": "Sweet Corn",
+      "category": "Sweet",
+      "imageUrl": "https://example.com/sweet_corn.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 86,
+        "proteins": 3.2,
+        "fats": 1.2,
+        "increment": 100,
+        "carbs": 19
+      },
+      "id": 15
+    },
+    {
+      "price": 0.0048,
+      "weight": 1000,
+      "name": "Radish",
+      "category": "Roots",
+      "imageUrl": "https://example.com/radish.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 16,
+        "proteins": 0.7,
+        "fats": 0.1,
+        "increment": 100,
+        "carbs": 3.4
+      },
+      "id": 16
+    },
+    {
+      "price": 0.0065,
+      "weight": 800,
+      "name": "BBQ Sauce",
+      "category": "Dressings",
+      "imageUrl": "https://example.com/bbq_sauce.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 165,
+        "proteins": 1,
+        "fats": 0.4,
+        "increment": 100,
+        "carbs": 40
+      },
+      "id": 17
+    },
+    {
+      "price": 0.0035,
+      "weight": 700,
+      "name": "Sweet Potato",
+      "category": "Roots",
+      "imageUrl": "https://example.com/sweet_potato.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 86,
+        "proteins": 1.6,
+        "fats": 0.1,
+        "increment": 100,
+        "carbs": 20.1
+      },
+      "id": 18
+    },
+    {
+      "price": 0.0022,
+      "weight": 600,
+      "name": "Green Chili",
+      "category": "Spicy",
+      "imageUrl": "https://example.com/green_chili.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 40,
+        "proteins": 1.9,
+        "fats": 0.2,
+        "increment": 100,
+        "carbs": 8.8
+      },
+      "id": 19
+    },
+    {
+      "price": 0.0075,
+      "weight": 750,
+      "name": "Agave Syrup",
+      "category": "Sweet",
+      "imageUrl": "https://example.com/agave_syrup.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 310,
+        "proteins": 0,
+        "fats": 0,
+        "increment": 100,
+        "carbs": 76
+      },
+      "id": 20
+    },
+    {
+      "price": 0.0042,
+      "weight": 850,
+      "name": "Hot Sauce",
+      "category": "Spicy",
+      "imageUrl": "https://example.com/hot_sauce.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 12,
+        "proteins": 0.5,
+        "fats": 0.1,
+        "increment": 100,
+        "carbs": 2.4
+      },
+      "id": 21
+    },
+    {
+      "price": 0.0058,
+      "weight": 950,
+      "name": "Tahini",
+      "category": "Dressings",
+      "imageUrl": "https://example.com/tahini.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 595,
+        "proteins": 17,
+        "fats": 53,
+        "increment": 100,
+        "carbs": 21
+      },
+      "id": 22
+    },
+    {
+      "price": 0.003,
+      "weight": 1000,
+      "name": "Yam",
+      "category": "Roots",
+      "imageUrl": "https://example.com/yam.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 118,
+        "proteins": 1.5,
+        "fats": 0.1,
+        "increment": 100,
+        "carbs": 27.9
+      },
+      "id": 23
+    },
+    {
+      "price": 0.0026,
+      "weight": 1200,
+      "name": "Tomato",
+      "category": "Fresh Veggie",
+      "imageUrl": "https://example.com/tomato.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 18,
+        "proteins": 0.9,
+        "fats": 0.2,
+        "increment": 100,
+        "carbs": 3.9
+      },
+      "id": 24
+    },
+    {
+      "price": 0.0033,
+      "weight": 1300,
+      "name": "Cucumber",
+      "category": "Fresh Veggie",
+      "imageUrl": "https://example.com/cucumber.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 16,
+        "proteins": 0.7,
+        "fats": 0.1,
+        "increment": 100,
+        "carbs": 3.6
+      },
+      "id": 25
+    },
+    {
+      "price": 0.0029,
+      "weight": 1500,
+      "name": "Lettuce",
+      "category": "Fresh Veggie",
+      "imageUrl": "https://example.com/lettuce.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 15,
+        "proteins": 1.4,
+        "fats": 0.2,
+        "increment": 100,
+        "carbs": 2.9
+      },
+      "id": 26
+    },
+    {
+      "price": 0.0041,
+      "weight": 1000,
+      "name": "Bell Pepper",
+      "category": "Fresh Veggie",
+      "imageUrl": "https://example.com/bell_pepper.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 31,
+        "proteins": 1,
+        "fats": 0.3,
+        "increment": 100,
+        "carbs": 6
+      },
+      "id": 27
+    },
+    {
+      "price": 0.0037,
+      "weight": 800,
+      "name": "Zucchini",
+      "category": "Fresh Veggie",
+      "imageUrl": "https://example.com/zucchini.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 17,
+        "proteins": 1.2,
+        "fats": 0.3,
+        "increment": 100,
+        "carbs": 3.1
+      },
+      "id": 28
+    },
+    {
+      "price": 0.0034,
+      "weight": 1100,
+      "name": "Spinach",
+      "category": "Fresh Veggie",
+      "imageUrl": "https://example.com/spinach.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 23,
+        "proteins": 2.9,
+        "fats": 0.4,
+        "increment": 100,
+        "carbs": 3.6
+      },
+      "id": 29
+    },
+    {
+      "price": 0.003,
+      "weight": 900,
+      "name": "Broccoli",
+      "category": "Fresh Veggie",
+      "imageUrl": "https://example.com/broccoli.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 34,
+        "proteins": 2.8,
+        "fats": 0.4,
+        "increment": 100,
+        "carbs": 6.6
+      },
+      "id": 30
+    },
+    {
+      "price": 0.004,
+      "weight": 700,
+      "name": "Kale",
+      "category": "Fresh Veggie",
+      "imageUrl": "https://example.com/kale.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 49,
+        "proteins": 4.3,
+        "fats": 0.9,
+        "increment": 100,
+        "carbs": 8.8
+      },
+      "id": 31
+    },
+    {
+      "price": 0.0055,
+      "weight": 800,
+      "name": "Asparagus",
+      "category": "Fresh Veggie",
+      "imageUrl": "https://example.com/asparagus.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 20,
+        "proteins": 2.2,
+        "fats": 0.1,
+        "increment": 100,
+        "carbs": 3.9
+      },
+      "id": 32
+    },
+    {
+      "price": 0.0036,
+      "weight": 1400,
+      "name": "Green Beans",
+      "category": "Fresh Veggie",
+      "imageUrl": "https://example.com/green_beans.jpg",
+      "nutritionalInfo": {
+        "unit": "g",
+        "weight": 100,
+        "calorie": 31,
+        "proteins": 1.8,
+        "fats": 0.1,
+        "increment": 100,
+        "carbs": 7.1
+      },
+      "id": 33
+    }
+  ]
+}
