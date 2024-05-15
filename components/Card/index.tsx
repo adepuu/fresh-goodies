@@ -1,7 +1,8 @@
 import Image from "next/image";
 import React from "react";
-import { Product } from "@/types/product";
 import add from "@/public/add.svg";
+import { Product } from "@/types/product";
+import useProductDetails from "@/hooks/useProductDetail";
 
 export default function Card({
   id,
@@ -12,6 +13,7 @@ export default function Card({
   imageUrl,
   metadata,
 }: Product) {
+  const { productDetails, loading, error } = useProductDetails(id);
   return (
     <div className="p-3 flex flex-col gap-0.5">
       <Image src={imageUrl} alt={`${imageUrl} Image`} />
