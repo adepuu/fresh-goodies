@@ -3,8 +3,8 @@ import { Product } from "@/types/product"
 import { useEffect, useState } from "react"
 
 const useFetchProduct = () => {
-  const [products, setProducts] = useState<Product>()
-  const [category, setCategory] = useState<string[]>()
+  const [products, setProducts] = useState<Product[]>([])
+  const [category, setCategory] = useState<string[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<unknown>(null)
 

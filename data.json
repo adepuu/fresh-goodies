@@ -46,7 +46,7 @@
       "weight": 1200,
       "name": "White Onion",
       "category": "Fresh Veggie",
-      "imageUrl": "/products/white_onion.png",
+      "imageUrl": "/products/white-onion.png",
       "metadata": {
         "unit": "g",
         "weight": 100,
