@@ -14,7 +14,7 @@ bun dev
 
 Then, run the dummy backend json-server
 ```bash
-json-server -p 8080 data.json
+yarn db
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
