@@ -1,5 +1,5 @@
 {
-  "favorite-products": [0, 1],
+  "favoriteProducts": [0, 1],
   "cart": [
     {
       "productId": 0,
