@@ -1,5 +1,5 @@
-export interface FavoriteProducts {
-  productIds: number[];
+export interface FavoriteProduct {
+  productIds: number;
 }
 
 export interface Product {

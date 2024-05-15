@@ -13,7 +13,7 @@
       "name": "Beetles",
       "category": "Exotic",
       "imageUrl": "/products/beetles.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 190,
@@ -30,7 +30,7 @@
       "name": "Cucumber",
       "category": "Fresh Veggie",
       "imageUrl": "/products/cucumber.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 16,
@@ -47,7 +47,7 @@
       "name": "White Onion",
       "category": "Fresh Veggie",
       "imageUrl": "/products/white_onion.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 40,
@@ -64,7 +64,7 @@
       "name": "Lemon",
       "category": "Fresh Veggie",
       "imageUrl": "/products/lemon.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 29,
@@ -81,7 +81,7 @@
       "name": "Potato",
       "category": "Roots",
       "imageUrl": "/products/potato.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 77,
@@ -98,7 +98,7 @@
       "name": "Fresh Garlic",
       "category": "Spicy",
       "imageUrl": "/products/garlic.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 143,
@@ -115,7 +115,7 @@
       "name": "Red Chili Pepper",
       "category": "Spicy",
       "imageUrl": "/products/red_chili_pepper.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 40,
@@ -132,7 +132,7 @@
       "name": "Ranch Dressing",
       "category": "Dressings",
       "imageUrl": "/products/ranch_dressing.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 145,
@@ -149,7 +149,7 @@
       "name": "Honey",
       "category": "Sweet",
       "imageUrl": "/products/honey.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 304,
@@ -166,7 +166,7 @@
       "name": "Carrot",
       "category": "Roots",
       "imageUrl": "/products/carrot.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 41,
@@ -183,7 +183,7 @@
       "name": "Beetroot",
       "category": "Roots",
       "imageUrl": "/products/beetroot.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 43,
@@ -200,7 +200,7 @@
       "name": "Maple Syrup",
       "category": "Sweet",
       "imageUrl": "/products/maple_syrup.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 260,
@@ -217,7 +217,7 @@
       "name": "Olive Oil Dressing",
       "category": "Dressings",
       "imageUrl": "/products/olive_oil_dressing.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 884,
@@ -234,7 +234,7 @@
       "name": "Ginger",
       "category": "Spicy",
       "imageUrl": "/products/ginger.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 80,
@@ -251,7 +251,7 @@
       "name": "Balsamic Vinegar",
       "category": "Dressings",
       "imageUrl": "/products/balsamic_vinegar.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 88,
@@ -268,7 +268,7 @@
       "name": "Sweet Corn",
       "category": "Sweet",
       "imageUrl": "/products/sweet_corn.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 86,
@@ -285,7 +285,7 @@
       "name": "Radish",
       "category": "Roots",
       "imageUrl": "/products/radish.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 16,
@@ -302,7 +302,7 @@
       "name": "BBQ Sauce",
       "category": "Dressings",
       "imageUrl": "/products/bbq_sauce.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 165,
@@ -319,7 +319,7 @@
       "name": "Sweet Potato",
       "category": "Roots",
       "imageUrl": "/products/sweet_potato.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 86,
@@ -336,7 +336,7 @@
       "name": "Green Chili",
       "category": "Spicy",
       "imageUrl": "/products/green_chili.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 40,
@@ -353,7 +353,7 @@
       "name": "Agave Syrup",
       "category": "Sweet",
       "imageUrl": "/products/agave_syrup.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 310,
@@ -370,7 +370,7 @@
       "name": "Hot Sauce",
       "category": "Spicy",
       "imageUrl": "/products/hot_sauce.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 12,
@@ -387,7 +387,7 @@
       "name": "Tahini",
       "category": "Dressings",
       "imageUrl": "/products/tahini.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 595,
@@ -404,7 +404,7 @@
       "name": "Yam",
       "category": "Roots",
       "imageUrl": "/products/yam.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 118,
@@ -421,7 +421,7 @@
       "name": "Tomato",
       "category": "Fresh Veggie",
       "imageUrl": "/products/tomato.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 18,
@@ -438,7 +438,7 @@
       "name": "Cucumber",
       "category": "Fresh Veggie",
       "imageUrl": "/products/cucumber.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 16,
@@ -455,7 +455,7 @@
       "name": "Lettuce",
       "category": "Fresh Veggie",
       "imageUrl": "/products/lettuce.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 15,
@@ -472,7 +472,7 @@
       "name": "Bell Pepper",
       "category": "Fresh Veggie",
       "imageUrl": "/products/bell_pepper.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 31,
@@ -489,7 +489,7 @@
       "name": "Zucchini",
       "category": "Fresh Veggie",
       "imageUrl": "/products/zucchini.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 17,
@@ -506,7 +506,7 @@
       "name": "Spinach",
       "category": "Fresh Veggie",
       "imageUrl": "/products/spinach.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 23,
@@ -523,7 +523,7 @@
       "name": "Broccoli",
       "category": "Fresh Veggie",
       "imageUrl": "/products/broccoli.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 34,
@@ -540,7 +540,7 @@
       "name": "Kale",
       "category": "Fresh Veggie",
       "imageUrl": "/products/kale.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 49,
@@ -557,7 +557,7 @@
       "name": "Asparagus",
       "category": "Fresh Veggie",
       "imageUrl": "/products/asparagus.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 20,
@@ -574,7 +574,7 @@
       "name": "Green Beans",
       "category": "Fresh Veggie",
       "imageUrl": "/products/green_beans.png",
-      "nutritionalInfo": {
+      "metadata": {
         "unit": "g",
         "weight": 100,
         "calorie": 31,
