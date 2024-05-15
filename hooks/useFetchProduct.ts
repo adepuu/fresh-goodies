@@ -20,17 +20,16 @@ const useFetchProduct = () => {
         }
         const data = await response.json()
         // console.log("Products:", data)
+        setProducts(data)
 
         const category: string[] = [
           data.map((e: Product) => {
             return e.category
           }),
         ]
-        const uniqueCategory: string[] = Array.from(new Set(category))
-
+        const uniqueCategory: string[] = Array.from(new Set(...category))
         setCategory(uniqueCategory)
-        console.log("Categories:", uniqueCategory)
-        setProducts(data)
+        // console.log("Categories:", uniqueCategory)
 
         setLoading(false)
       } catch (error) {
@@ -42,7 +41,7 @@ const useFetchProduct = () => {
     fetchProducts()
   }, [])
 
-  return { products, loading, error }
+  return { products, category, loading, error }
 }
 
 export default useFetchProduct
