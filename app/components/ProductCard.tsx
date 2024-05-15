@@ -8,19 +8,24 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ image, price, name }) => {
   return (
-    <div className="p-4 h-60 rounded-lg bg-[#F9F8F6]">
-        <div className="flex justify-center items-center w-[145px] h-[113px] overflow-hidden">
-      <Image
-        src={image}
-        alt={name}
-        width={145}
-        height={113}
-        className="object-cover"
-      />
+    <div className="p-4 h-[242px] rounded-lg bg-[#F9F8F6]">
+      <div className="flex justify-center items-center overflow-hidden">
+        <Image
+          src={image}
+          alt={name}
+          width={145}
+          height={113}
+          className="object-cover object-center mix-blend-multiply "
+        />
       </div>
-      <p className="text-gray-700">${price.toFixed(1)}</p>
-
-      <h2 className="text-lg font-bold mt-2">{name}</h2>
+      <div className=" text-xl text-gray-700 font-bold">
+        ${price.toFixed(1)}
+      </div>
+      <div className="text-base">{name}</div>
+      <div className="flex justify-between items-center mt-2">
+        <div className=" text-gray-400">1 kg</div>
+        <div className=" border-[1px] rounded-[50%] w-[40px] h-[40px] text-2xl text-center align-middle leading-[35px] ">+</div>
+      </div>
     </div>
   );
 };

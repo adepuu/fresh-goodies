@@ -1,23 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useContext } from "react";
+import { CategoryContext } from "../context/CategoryContext";
 
 export default function CategoryMenu() {
-  const [activeItem, setActiveItem] = useState<string>("All");
+  const { activeCategory, changeCategory } = useContext(CategoryContext);
 
-  const menuItems = ["All", "Spicy", "Dressings", "Sweet", "Roots"];
+  const menuCategories = ["All", "Spicy", "Dressings", "Sweet", "Roots"];
 
   return (
     <>
       <div className="overflow-x-auto whitespace-nowrap scrollbar-hide">
         <ul className="inline-flex space-x-4 p-2">
-          {menuItems.map((item) => (
+          {menuCategories.map((item) => (
             <li
               key={item}
-              className={`inline-block px-4 py-2 ${
-                activeItem === item ? "border-b-2 border-black" : ""
+              className={`cursor-pointer inline-block px-4 py-2 ${
+                activeCategory === item ? "border-b-2 border-black" : ""
               }`}
-              onClick={() => setActiveItem(item)}
+              onClick={() => changeCategory(item)}
             >
               {item}
             </li>
