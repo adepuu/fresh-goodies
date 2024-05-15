@@ -1,3 +1,4 @@
+import { config } from "@/constants/url"
 import { useEffect, useState } from "react"
 
 type cart = {
@@ -15,7 +16,7 @@ const useFetchCart = () => {
   const handleAddToCart = async (cart: cart) => {
     try {
       setLoading(true)
-      const response = await fetch("http://localhost:2000/cart", {
+      const response = await fetch(config.BASE_URL + config.endpoints.cart, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -23,7 +24,7 @@ const useFetchCart = () => {
         body: JSON.stringify(cart),
       })
       if (!response.ok) {
-        throw new Error("Failed to add user.")
+        throw new Error("Failed to add item to cart.")
       }
 
       const data = await response.json()
@@ -41,7 +42,7 @@ const useFetchCart = () => {
     const fetchCart = async () => {
       try {
         setLoading(true)
-        const response = await fetch("http://localhost:2000/cart")
+        const response = await fetch(config.BASE_URL + config.endpoints.cart)
         if (!response.ok) {
           throw new Error("Failed to fetch cart.")
         }

@@ -1,3 +1,4 @@
+import { config } from "@/constants/url"
 import { FavoriteProduct } from "@/types/product"
 import { useEffect, useState } from "react"
 
@@ -15,7 +16,9 @@ const useFetchFavProd = () => {
     const handleFetchFavProd = async () => {
       try {
         setLoading(true)
-        const response = await fetch("http://localhost:2000/favorite-products")
+        const response = await fetch(
+          config.BASE_URL + config.endpoints.favoriteProducts
+        )
 
         if (!response.ok) {
           throw new Error("Failed to get favorite products.")
