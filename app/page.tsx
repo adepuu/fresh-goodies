@@ -5,16 +5,18 @@ import useFetchCart from "@/hooks/useFetchCart"
 import useFetchFavProd from "@/hooks/useFetchFavProd"
 import useFetchProduct from "@/hooks/useFetchProduct"
 import "./globals.css"
-import { useState } from "react"
-import { ProductCard } from "@/components"
+import { useContext, useState } from "react"
+import { CartCard, ProductCard } from "@/components"
+import ShoppingCartContext from "@/context/ShoppingCartContext"
 
 export default function Home() {
   const { favProd } = useFetchFavProd()
   const { cartList } = useFetchCart()
-  const { products, category } = useFetchProduct()
+  const { category } = useFetchProduct()
+  const { products } = useContext(ShoppingCartContext)
   const [categoryId, setCategoryId] = useState<number>(0)
 
-  console.log(cartList)
+  console.log(products)
   return (
     <main className='min-h-screen'>
       <div className='sticky z-50 bg-white top-0 left-0 right-0 flex justify-between items-center p-4'>
@@ -51,18 +53,7 @@ export default function Home() {
           })}
         </div>
       </div>
-      {cartList.length > 0 ? (
-        <div className='fixed mx-4 bottom-14 left-0 right-0'>
-          <div className='flex items-center justify-between px-6 py-3.5 bg-black rounded-full'>
-            <div>
-              <p className='text-white'>Cart</p>
-            </div>
-            <>
-              <p className='text-white'>$0</p>
-            </>
-          </div>
-        </div>
-      ) : null}
+      {cartList.length > 0 ? <CartCard /> : null}
     </main>
   )
 }

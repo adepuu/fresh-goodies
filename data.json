@@ -114,7 +114,7 @@
       "weight": 500,
       "name": "Red Chili Pepper",
       "category": "Spicy",
-      "imageUrl": "/products/red_chili_pepper.png",
+      "imageUrl": "/products/red_chili_pepper.jpg",
       "metadata": {
         "unit": "g",
         "weight": 100,
@@ -131,7 +131,7 @@
       "weight": 750,
       "name": "Ranch Dressing",
       "category": "Dressings",
-      "imageUrl": "/products/ranch_dressing.png",
+      "imageUrl": "/products/ranch_dressing.webp",
       "metadata": {
         "unit": "g",
         "weight": 100,
@@ -148,7 +148,7 @@
       "weight": 1000,
       "name": "Honey",
       "category": "Sweet",
-      "imageUrl": "/products/honey.png",
+      "imageUrl": "/products/honey.webp",
       "metadata": {
         "unit": "g",
         "weight": 100,
@@ -165,7 +165,7 @@
       "weight": 2000,
       "name": "Carrot",
       "category": "Roots",
-      "imageUrl": "/products/carrot.png",
+      "imageUrl": "/products/carrot.webp",
       "metadata": {
         "unit": "g",
         "weight": 100,
@@ -233,7 +233,7 @@
       "weight": 1000,
       "name": "Ginger",
       "category": "Spicy",
-      "imageUrl": "/products/ginger.png",
+      "imageUrl": "/products/ginger.jpg",
       "metadata": {
         "unit": "g",
         "weight": 100,
@@ -284,7 +284,7 @@
       "weight": 1000,
       "name": "Radish",
       "category": "Roots",
-      "imageUrl": "/products/radish.png",
+      "imageUrl": "/products/radish.webp",
       "metadata": {
         "unit": "g",
         "weight": 100,
@@ -301,7 +301,7 @@
       "weight": 800,
       "name": "BBQ Sauce",
       "category": "Dressings",
-      "imageUrl": "/products/bbq_sauce.png",
+      "imageUrl": "/products/bbq_sauce.jpg",
       "metadata": {
         "unit": "g",
         "weight": 100,
@@ -318,7 +318,7 @@
       "weight": 700,
       "name": "Sweet Potato",
       "category": "Roots",
-      "imageUrl": "/products/sweet_potato.png",
+      "imageUrl": "/products/sweet_potato.jpg",
       "metadata": {
         "unit": "g",
         "weight": 100,
@@ -386,7 +386,7 @@
       "weight": 950,
       "name": "Tahini",
       "category": "Dressings",
-      "imageUrl": "/products/tahini.png",
+      "imageUrl": "/products/tahini.jpg",
       "metadata": {
         "unit": "g",
         "weight": 100,
@@ -403,7 +403,7 @@
       "weight": 1000,
       "name": "Yam",
       "category": "Roots",
-      "imageUrl": "/products/yam.png",
+      "imageUrl": "/products/yam.jpg",
       "metadata": {
         "unit": "g",
         "weight": 100,
@@ -454,7 +454,7 @@
       "weight": 1500,
       "name": "Lettuce",
       "category": "Fresh Veggie",
-      "imageUrl": "/products/lettuce.png",
+      "imageUrl": "/products/lettuce.jpg",
       "metadata": {
         "unit": "g",
         "weight": 100,
@@ -471,7 +471,7 @@
       "weight": 1000,
       "name": "Bell Pepper",
       "category": "Fresh Veggie",
-      "imageUrl": "/products/bell_pepper.png",
+      "imageUrl": "/products/bell_pepper.jpg",
       "metadata": {
         "unit": "g",
         "weight": 100,
@@ -505,7 +505,7 @@
       "weight": 1100,
       "name": "Spinach",
       "category": "Fresh Veggie",
-      "imageUrl": "/products/spinach.png",
+      "imageUrl": "/products/spinach.jpg",
       "metadata": {
         "unit": "g",
         "weight": 100,
@@ -539,7 +539,7 @@
       "weight": 700,
       "name": "Kale",
       "category": "Fresh Veggie",
-      "imageUrl": "/products/kale.png",
+      "imageUrl": "/products/kale.jpg",
       "metadata": {
         "unit": "g",
         "weight": 100,
@@ -556,7 +556,7 @@
       "weight": 800,
       "name": "Asparagus",
       "category": "Fresh Veggie",
-      "imageUrl": "/products/asparagus.png",
+      "imageUrl": "/products/asparagus.jpg",
       "metadata": {
         "unit": "g",
         "weight": 100,
@@ -573,7 +573,7 @@
       "weight": 1400,
       "name": "Green Beans",
       "category": "Fresh Veggie",
-      "imageUrl": "/products/green_beans.png",
+      "imageUrl": "/products/green_beans.jpg",
       "metadata": {
         "unit": "g",
         "weight": 100,

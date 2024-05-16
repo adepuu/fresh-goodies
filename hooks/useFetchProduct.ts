@@ -1,12 +1,14 @@
 import { config } from "@/constants/url"
+import ShoppingCartContext from "@/context/ShoppingCartContext"
 import { Product } from "@/types/product"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 
 const useFetchProduct = () => {
-  const [products, setProducts] = useState<Product[]>([])
+  // const [products, setProducts] = useState<Product[]>([])
   const [category, setCategory] = useState<string[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<unknown>(null)
+  const { setProducts: setProductsGlobal } = useContext(ShoppingCartContext)
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -20,8 +22,8 @@ const useFetchProduct = () => {
         }
         const data = await response.json()
         // console.log("Products:", data)
-        setProducts(data)
 
+        setProductsGlobal(data)
         const category: string[] = [
           data.map((e: Product) => {
             return e.category
@@ -41,7 +43,7 @@ const useFetchProduct = () => {
     fetchProducts()
   }, [])
 
-  return { products, category, loading, error }
+  return { category, loading, error }
 }
 
 export default useFetchProduct
