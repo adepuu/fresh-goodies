@@ -8,7 +8,7 @@ type cart = {
 }
 
 const useFetchCart = () => {
-  const [cartList, setCartList] = useState<cart[]>()
+  const [cartList, setCartList] = useState<cart[]>([])
   const [cartAdded, setCartAdded] = useState<number>(0)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<unknown>(null)
