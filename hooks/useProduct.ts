@@ -1,48 +1,59 @@
-import { config } from "@/constants/url";
+import { getProducts } from "@/api/getProducts";
+import { GET_PRODUCTS } from "@/constants/queryKey";
 import { Product } from "@/types/product";
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { useMemo } from "react";
 
-interface ProductGroup {
+interface ProductCategoryGroup {
   // Category name: Multiple products
-  // Hashmap category as its key, 
+  // Hashmap category as its key,
   // Array of product as its value
   [key: string]: Product[];
 }
 
-const useProduct = () => {
-  const [products, setProduct] = useState<Product[]>([]);
-  const [categories, setCategories] = useState<string[]>([]);
-  const [productGroup, setProductGroup] = useState<ProductGroup>();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      // https://localhost:8080/products
-      const response = await fetch(config.BASE_URL+config.endpoints.products);
-      const data = await response.json() as Product[];
-
-      const uniqueCategories = new Set(data.map(product => product.category));
-      const categoriesArray = Array.from(uniqueCategories);
-      const groupData: ProductGroup = {};
-
-      console.log("Raw data: ", data);
-      console.log("Categories: ", categoriesArray);
-      
-      categoriesArray.forEach(category => {
-        const currentCategoryProducts = data.filter(product => product.category === category);
-        groupData[category] = currentCategoryProducts;
-      });
-
-      setProductGroup(groupData);
-      setCategories(categoriesArray);
-      setProduct(data);
-    }
-
-    fetchData();
-  }, []) 
-  //empty depedency array so it wont be called every render
-  // [] means that only called once
-
-  return { products, productGroup, categories }
+interface ProductMap {
+  // Hashmap product ID as its key,
+  // Product as its value
+  [key: number]: Product;
 }
+
+const useProduct = () => {
+  const {
+    data: products,
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: [GET_PRODUCTS],
+    queryFn: async () => await getProducts(),
+  });
+
+  const productMap: ProductMap = useMemo(() => {
+    const newMap: ProductMap = {};
+    if (!products) return newMap;
+    products.forEach((item) => {
+      newMap[item.id] = item;
+    });
+    return newMap;
+  }, [products]);
+
+  const categories: string[] = useMemo(() => {
+    if (!products) return []
+    const uniqueCategories = new Set(products.map(product => product.category));
+    const categoriesArray = Array.from(uniqueCategories);
+    return categoriesArray
+  }, [products]);
+
+  const productCategoryGroup: ProductCategoryGroup = useMemo(() => {
+    const newGroup: ProductCategoryGroup = {};
+    if (!products) return newGroup;
+    categories.forEach((category) => {
+      const productList = products.filter(each => each.category === category);
+      newGroup[category] = productList;
+    });
+    return newGroup;
+  }, [categories, products]);
+
+  return { products, productMap, productCategoryGroup, categories, isLoading, error };
+};
 
 export default useProduct;
