@@ -9,13 +9,7 @@
       "id": "4b63"
     }
   ],
-  "cart": [
-    {
-      "id": "11",
-      "productId": "11",
-      "quantity": 1200
-    }
-  ],
+  "cart": [],
   "products": [
     {
       "price": 0.0032,

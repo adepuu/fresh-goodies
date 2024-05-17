@@ -7,6 +7,7 @@ import cn from "classnames";
 
 interface QtyGroupProps extends Product {
   block?: boolean;
+  withPrice?: boolean;
 }
 
 const QtyGroup: React.FC<QtyGroupProps> = ({ block, ...product }) => {

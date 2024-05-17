@@ -20,13 +20,14 @@ const ProductDetail: React.FC<ProductDetailProps> = () => {
     prevProduct,
     hasNext,
     hasPrev,
+    resetActiveProduct,
   } = useActiveProductContext();
   const { productMap } = useProduct();
 
   const currentProduct = productMap[activeProduct || 0];
 
   return (
-    <Drawer open={activeProduct !== undefined}>
+    <Drawer onClose={() => resetActiveProduct()} open={activeProduct !== undefined}>
       <DrawerContent className="h-[95%]">
         <div className="flex flex-col h-full justify-between">
           {currentProduct ? (

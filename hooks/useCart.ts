@@ -28,9 +28,9 @@ const useCart = (): ShoppingCart => {
     isLoading: cartRelatedProductsLoading,
     error: cartRelatedProductsError,
   } = useQuery({
-    queryKey: [GET_CART_PRODUCTS, cart?.map(item => item.productId)],
+    queryKey: [GET_CART_PRODUCTS, cart?.map((item) => item.productId)],
     queryFn: async () => {
-      const productIds = cart?.map(item => item.productId) || [];
+      const productIds = cart?.map((item) => item.productId) || [];
       return await getRelatedCartProduct(productIds);
     },
     enabled: !!cart,
@@ -96,19 +96,31 @@ const useCart = (): ShoppingCart => {
     return cartRelatedProducts.reduce((total, product) => {
       const cartItem = productCartMap[product.id];
       if (!cartItem) return total;
-      return total + (product.price * cartItem.quantity);
+      return total + product.price * cartItem.quantity;
     }, 0);
   };
 
+  const lastTwoItems = useMemo(() => {
+    if (!cart || !cartRelatedProducts) return undefined;
+    const lastTwoCartItems = cart.slice(-2);
+    const lastTwoProducts = lastTwoCartItems
+      .map((cartItem) =>
+        cartRelatedProducts.find((product) => product.id === cartItem.productId)
+      )
+      .filter((product): product is Product => product !== undefined);
+    return lastTwoProducts.length > 0 ? lastTwoProducts : undefined;
+  }, [cart, cartRelatedProducts]);
+
   return {
-    cart,
-    productCartMap,
-    isLoading: cartLoading || cartRelatedProductsLoading,
-    error: cartError || cartRelatedProductsError,
     addItem,
+    cart,
+    error: cartError || cartRelatedProductsError,
+    getTotalPrice,
+    isLoading: cartLoading || cartRelatedProductsLoading,
+    lastTwoItems,
+    productCartMap,
     removeItem,
     updateItemQuantity,
-    getTotalPrice,
   };
 };
 

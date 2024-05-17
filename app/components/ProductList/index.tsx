@@ -92,7 +92,7 @@ const ProductList: React.FC = () => {
         ))}
         {!isCartEmpty ? (
           <div className="fixed bottom-0 left-0 w-full h-fit px-4 pb-[56px]">
-            <AddToCartButton />
+            <AddToCartButton withProductThumbnails />
           </div>
         ) : null}
       </div>
@@ -108,7 +108,7 @@ const ProductList: React.FC = () => {
       </div>
       {!isCartEmpty ? (
         <div className="fixed bottom-0 left-0 w-full h-fit px-4 pb-[56px]">
-          <AddToCartButton />
+          <AddToCartButton withProductThumbnails />
         </div>
       ) : null}
     </div>

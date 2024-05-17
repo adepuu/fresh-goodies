@@ -14,12 +14,13 @@ export interface ProductCartMap {
 }
 
 export interface ShoppingCart {
-  cart: CartItem[] | undefined;
-  productCartMap: ProductCartMap;
-  isLoading: boolean;
-  error: Error | null;
   addItem(product: Product, quantity: number): void;
+  cart: CartItem[] | undefined;
+  error: Error | null;
+  getTotalPrice(): number;
+  isLoading: boolean;
+  lastTwoItems: Product[] | undefined;
+  productCartMap: ProductCartMap;
   removeItem(productId: number): void;
   updateItemQuantity(productId: number, quantity: number): void;
-  getTotalPrice(): number;
 }
