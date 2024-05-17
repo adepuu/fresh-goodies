@@ -39,11 +39,11 @@ const ProductList: React.FC = () => {
 
   if (!activeCategory) {
     return (
-      <div className="py-5 px-4">
+      <div className="py-5 px-4 flex flex-col gap-5">
         {categories.map((category) => (
           <div key={category} className="flex flex-col">
-            <h1>{category}</h1>
-            <div className="grid grid-cols-2 gap-2 mt-10">
+            <h1 className="font-bold text-2xl">{category}</h1>
+            <div className="grid grid-cols-2 gap-2 mt-4">
               {productCategoryGroup[category].map((item) => (
                 <ProductCard key={item.id} {...item} />
               ))}

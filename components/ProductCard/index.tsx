@@ -11,7 +11,6 @@ const ProductCard: React.FC<ProductCardProps> = props => {
     weight,
     category,
     price,
-    metadata,
   } = props;
 
   const displayPrice = price * weight;
@@ -21,7 +20,7 @@ const ProductCard: React.FC<ProductCardProps> = props => {
         src={imageUrl}
         width={150}
         height={150}
-        className="h-auto w-full aspect-square mix-blend-multiply"
+        className="h-auto w-full aspect-square mix-blend-multiply object-cover"
         alt={category}
       />
       <div className="mb-2">

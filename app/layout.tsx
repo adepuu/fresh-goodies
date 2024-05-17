@@ -5,8 +5,8 @@ import { CategoryProvider } from "@/context/CategoryContext";
 
 
 export const metadata: Metadata = {
-  title: "Fresh Goodies ;)",
-  description: "Go Eat Some Fresh Goodies ;)",
+  title: "Fresh Goodies 🥦",
+  description: "Go Eat Some Fresh Goodies 🥦",
 };
 
 export default function RootLayout({

@@ -11,7 +11,7 @@ async function getData() {
 
   let URL = config.BASE_URL + config.endpoints.products
 
-  const response = fetch(config.BASE_URL + config.endpoints.products, options)
+  const response = fetch(URL, options)
     .then((response) => response.json())
     .catch((err) => console.error(err));
 
