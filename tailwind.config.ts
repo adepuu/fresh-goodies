@@ -10,6 +10,10 @@ const config: Config = {
     extend: {
       fontFamily: {
         "sf-pro-display": ["SF Pro Display"]
+      },
+      colors: {
+        "weathered-stone": "#C4C4C4",
+        "whitest-white": "#F9F8F6",
       }
     },
   },

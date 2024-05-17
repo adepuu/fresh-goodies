@@ -1,18 +1,20 @@
 "use client";
 
+import ProductCard from "@/components/ProductCard";
 import useCategoryContext from "@/context/CategoryContext";
 import useProduct from "@/hooks/useProduct";
+import { useMemo } from "react";
 
 const ProductList: React.FC = () => {
-  const {
-    products,
-    isLoading,
-    error,
-    categories,
-    productCategoryGroup,
-  } = useProduct();
+  const { products, isLoading, error, categories, productCategoryGroup } =
+    useProduct();
 
   const { activeCategory } = useCategoryContext();
+
+  const filteredProducts = useMemo(() => {
+    if (!products || !activeCategory) return [];
+    return products.filter((item) => item.category === activeCategory);
+  }, [activeCategory, products]);
 
   if (isLoading)
     return (
@@ -36,26 +38,29 @@ const ProductList: React.FC = () => {
     );
 
   if (!activeCategory) {
-    return categories.map((category) => (
-      <div key={category} className="flex flex-col">
-        <h1>{category}</h1>
-        <div className="grid grid-cols-2 gap-2 mt-10">
-          {productCategoryGroup[category].map((item, index) => (
-            <div className="border border-black p-4" key={index}>
-              <div>Category: {item.category}</div>
-              <div>Name: {item.name}</div>
+    return (
+      <div className="py-5 px-4">
+        {categories.map((category) => (
+          <div key={category} className="flex flex-col">
+            <h1>{category}</h1>
+            <div className="grid grid-cols-2 gap-2 mt-10">
+              {productCategoryGroup[category].map((item) => (
+                <ProductCard key={item.id} {...item} />
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
-    ));
+    );
   }
 
   return (
-    <div className="grid-cols-2 gap-[10px]">
-      {products.map((item) => (
-        <div key={item.id}>{item.name}</div>
-      ))}
+    <div className="py-5 px-4">
+      <div className="grid grid-cols-2 gap-[10px]">
+        {filteredProducts.map((item) => (
+          <ProductCard key={item.id} {...item} />
+        ))}
+      </div>
     </div>
   );
 };
