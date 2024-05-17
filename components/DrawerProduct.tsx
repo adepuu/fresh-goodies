@@ -25,10 +25,11 @@ const DrawerProduct: React.FC<{ id: number; onClose: () => void }> = ({
     setActiveProd(products[productId])
   }, [productId])
 
+  console.log(productId)
   return (
     <div className='fixed top-0 bottom-0 left-0 right-0 pt-12 bg-black bg-opacity-50 z-50'>
       <div className='relative bg-white h-full  rounded-t-3xl'>
-        <div>
+        <div onClick={onClose}>
           <BsDashLg size={25} className='text-light-grey mx-auto' />
         </div>
         <div className='px-20 pt-10'>
@@ -37,7 +38,7 @@ const DrawerProduct: React.FC<{ id: number; onClose: () => void }> = ({
             height={500}
             width={500}
             alt={`${activeProd.name}-image`}
-            className='h-64 object-contain'
+            className='h-64 w-full object-contain'
           />
         </div>
         <div className='absolute flex top-1/4 -translate-y-1/4 justify-between w-full'>
@@ -53,7 +54,7 @@ const DrawerProduct: React.FC<{ id: number; onClose: () => void }> = ({
           <button
             disabled={productId == products.length - 1 ? true : false}
             type='button'
-            title='previous'
+            title='next'
             onClick={() => setProductId(productId + 1)}
             className='bg-light-white px-4 py-10 rounded-l-full'
           >
@@ -128,7 +129,7 @@ const DrawerProduct: React.FC<{ id: number; onClose: () => void }> = ({
               </button>
             </div>
           </div>
-          <button type='button' title='cart button'>
+          <button type='button' title='cart button' onClick={onClose}>
             <CartCard />
           </button>
         </div>

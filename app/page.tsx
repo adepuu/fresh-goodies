@@ -16,7 +16,7 @@ export default function Home() {
   const { products } = useContext(ShoppingCartContext)
   const [categoryId, setCategoryId] = useState<number>(0)
 
-  console.log(products)
+  // console.log(products)
   return (
     <main className='min-h-screen'>
       <div className='sticky z-50 bg-white top-0 left-0 right-0 flex justify-between items-center p-4'>

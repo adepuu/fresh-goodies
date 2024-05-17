@@ -14,8 +14,8 @@ const ProductCard: React.FC<Product> = (props) => {
   const [detailId, setDetailId] = useState<number>(0)
 
   const handleOpenDetail = (val: number) => {
-    setOpenDetail(true)
-    setDetailId(val)
+    setOpenDetail(!openDetail)
+    if (!openDetail) setDetailId(val)
   }
 
   return (
@@ -73,7 +73,10 @@ const ProductCard: React.FC<Product> = (props) => {
         </div>
       </div>
       {openDetail ? (
-        <DrawerProduct id={detailId} onClose={() => setOpenDetail(false)} />
+        <DrawerProduct
+          id={detailId}
+          onClose={() => handleOpenDetail(detailId)}
+        />
       ) : null}
     </div>
   )

@@ -1,10 +1,10 @@
 "use client"
-import React, { useState } from "react"
+import React, { ReactNode, useState } from "react"
 import ShoppingCartContext from "./ShoppingCartContext"
 import { CartItem, ShoppingCart } from "@/types/cart"
 import { Product } from "@/types/product"
 
-const ShoppingCartProvider: React.FC<{ children: JSX.Element }> = ({
+const ShoppingCartProvider: React.FC<{ children: JSX.Element | ReactNode }> = ({
   children,
 }) => {
   let [items, setItems] = useState<CartItem[]>([])
@@ -67,7 +67,7 @@ const ShoppingCartProvider: React.FC<{ children: JSX.Element }> = ({
 
   return (
     <ShoppingCartContext.Provider value={value}>
-      {children}~
+      {children}
     </ShoppingCartContext.Provider>
   )
 }
