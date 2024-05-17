@@ -1,27 +1,45 @@
-import { addCartItem, getCart, removeCartItem, updateCart } from "@/api/getCart";
-import { GET_CART } from "@/constants/queryKey";
+import {
+  addCartItem,
+  getCart,
+  getRelatedCartProduct,
+  removeCartItem,
+  updateCart,
+} from "@/api/getCart";
+import { GET_CART, GET_CART_PRODUCTS } from "@/constants/queryKey";
 import { CartItem, ProductCartMap, ShoppingCart } from "@/types/cart";
 import { Product } from "@/types/product";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useMemo } from "react";
-import useProduct from "./useProduct";
 
 const useCart = (): ShoppingCart => {
   const queryClient = useQueryClient();
 
   const {
     data: cart,
-    isLoading,
-    error,
+    isLoading: cartLoading,
+    error: cartError,
   } = useQuery({
     queryKey: [GET_CART],
     queryFn: async () => await getCart(),
   });
 
+  const {
+    data: cartRelatedProducts,
+    isLoading: cartRelatedProductsLoading,
+    error: cartRelatedProductsError,
+  } = useQuery({
+    queryKey: [GET_CART_PRODUCTS, cart?.map(item => item.productId)],
+    queryFn: async () => {
+      const productIds = cart?.map(item => item.productId) || [];
+      return await getRelatedCartProduct(productIds);
+    },
+    enabled: !!cart,
+  });
+
   const productCartMap: ProductCartMap = useMemo(() => {
     const newMap: ProductCartMap = {};
     if (!cart) return newMap;
-    cart.forEach(item => {
+    cart.forEach((item) => {
       newMap[item.productId] = item;
     });
     return newMap;
@@ -30,45 +48,68 @@ const useCart = (): ShoppingCart => {
   const updateItemQuantityMutation = useMutation({
     mutationFn: updateCart,
     onSuccess: () => {
-      // Invalidate and refetch
       queryClient.invalidateQueries({ queryKey: [GET_CART] });
+      queryClient.invalidateQueries({ queryKey: [GET_CART_PRODUCTS] });
     },
   });
 
   const addNewItemMutation = useMutation({
     mutationFn: addCartItem,
     onSuccess: () => {
-      // Invalidate and refetch
       queryClient.invalidateQueries({ queryKey: [GET_CART] });
+      queryClient.invalidateQueries({ queryKey: [GET_CART_PRODUCTS] });
     },
   });
 
   const removeItemMutation = useMutation({
     mutationFn: removeCartItem,
     onSuccess: () => {
-      // Invalidate and refetch
       queryClient.invalidateQueries({ queryKey: [GET_CART] });
+      queryClient.invalidateQueries({ queryKey: [GET_CART_PRODUCTS] });
     },
   });
 
   const addItem = (product: Product, quantity: number) => {
-    const newItem: CartItem = { id: product.id, productId: product.id, quantity: quantity }
-    addNewItemMutation.mutate(newItem)
-  }
+    const newItem: CartItem = {
+      id: product.id,
+      productId: product.id,
+      quantity: quantity,
+    };
+    addNewItemMutation.mutate(newItem);
+  };
 
   const removeItem = (productId: number) => {
-    removeItemMutation.mutate(productId)
-  }
-  
-  const updateItemQuantity = (productId: number, quantity: number) => {
-    const updatedItem: CartItem = { id: productId, productId: productId, quantity: quantity }
-    updateItemQuantityMutation.mutate(updatedItem)
-  }
-  const getTotalPrice = () => {
-    return 0
-  }
+    removeItemMutation.mutate(productId);
+  };
 
-  return { cart, productCartMap, isLoading, error, addItem, removeItem, updateItemQuantity, getTotalPrice };
+  const updateItemQuantity = (productId: number, quantity: number) => {
+    const updatedItem: CartItem = {
+      id: productId,
+      productId: productId,
+      quantity: quantity,
+    };
+    updateItemQuantityMutation.mutate(updatedItem);
+  };
+
+  const getTotalPrice = () => {
+    if (!cartRelatedProducts) return 0;
+    return cartRelatedProducts.reduce((total, product) => {
+      const cartItem = productCartMap[product.id];
+      if (!cartItem) return total;
+      return total + (product.price * cartItem.quantity);
+    }, 0);
+  };
+
+  return {
+    cart,
+    productCartMap,
+    isLoading: cartLoading || cartRelatedProductsLoading,
+    error: cartError || cartRelatedProductsError,
+    addItem,
+    removeItem,
+    updateItemQuantity,
+    getTotalPrice,
+  };
 };
 
 export default useCart;

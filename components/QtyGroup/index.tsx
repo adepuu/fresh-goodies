@@ -63,7 +63,7 @@ const QtyGroup: React.FC<QtyGroupProps> = ({ block, ...product }) => {
     <div
       className={cn(
         "w-full flex justify-between items-center",
-        block ? "h-full bg-whitest-white rounded-full px-[10px]" : ""
+        block ? "h-full bg-whitest-white rounded-full px-[10px]" : "h-10"
       )}
     >
       {cartItem && cartItem.quantity > 0 ? (

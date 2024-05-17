@@ -9,8 +9,8 @@ const Add: React.FC<{ type: "dark" | "light" }> = ({ type }) => {
     >
       <rect x="6" y="11" width="12" height="2" rx="1" fill={type === "dark" ? "black" : "white"} />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M13 6.75V17.25C13 17.6642 12.5523 18 12 18C11.4477 18 11 17.6642 11 17.25V6.75C11 6.33579 11.4477 6 12 6C12.5523 6 13 6.33579 13 6.75Z"
         fill={type === "dark" ? "black" : "white"}
       />
