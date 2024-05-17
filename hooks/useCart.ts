@@ -4,6 +4,7 @@ import { CartItem, ProductCartMap, ShoppingCart } from "@/types/cart";
 import { Product } from "@/types/product";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useMemo } from "react";
+import useProduct from "./useProduct";
 
 const useCart = (): ShoppingCart => {
   const queryClient = useQueryClient();

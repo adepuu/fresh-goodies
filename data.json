@@ -11,19 +11,14 @@
   ],
   "cart": [
     {
-      "id": "33",
-      "productId": "33",
-      "quantity": 1400
+      "id": "15",
+      "productId": "15",
+      "quantity": 2000
     },
     {
-      "id": "29",
-      "productId": "29",
+      "id": "8",
+      "productId": "8",
       "quantity": 1500
-    },
-    {
-      "id": "25",
-      "productId": "25",
-      "quantity": 1400
     }
   ],
   "products": [

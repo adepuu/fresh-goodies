@@ -1,15 +1,6 @@
 "use client";
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
-import { Button } from "@/components/ui/button";
+
+import { Drawer, DrawerContent } from "@/components/ui/drawer";
 import useActiveProductContext from "@/context/ActiveProductContext";
 import useProduct from "@/hooks/useProduct";
 import Image from "next/image";
@@ -17,47 +8,61 @@ import PrevProductIcon from "@/public/icons/prev-product.png";
 import NextProductIcon from "@/public/icons/next-product.png";
 import Favorite from "@/components/Icons/Favorite";
 import QtyGroup from "@/components/QtyGroup";
-import { useEffect } from "react";
+import cn from "classnames";
+import AddToCartButton from "@/components/AddToCartButton";
 
 interface ProductDetailProps {}
 
 const ProductDetail: React.FC<ProductDetailProps> = () => {
-  const { activeProduct, nextProduct, prevProduct, hasNext, hasPrev, productNavigation, resetActiveProduct } =
-    useActiveProductContext();
+  const {
+    activeProduct,
+    nextProduct,
+    prevProduct,
+    hasNext,
+    hasPrev,
+  } = useActiveProductContext();
   const { productMap } = useProduct();
 
   const currentProduct = productMap[activeProduct || 0];
+
   return (
     <Drawer open={activeProduct !== undefined}>
-      <DrawerTrigger>Open</DrawerTrigger>
       <DrawerContent className="h-[95%]">
         <div className="flex flex-col h-full justify-between">
           {currentProduct ? (
             <>
-              <div className="py-[18px] flex justify-between items-center grow">
-                {hasPrev ? (
+              <div className="flex items-center grow">
+                <div className="w-full h-fit flex justify-between items-center">
                   <Image
                     onClick={prevProduct}
                     src={PrevProductIcon}
                     alt="prev btn"
-                    className="w-[45px] object-cover object-center h-[150px]"
+                    className={cn(
+                      "w-[45px] object-cover object-center h-[150px] overflow-visible",
+                      hasPrev
+                        ? "opacity-100 pointer-events-auto"
+                        : "opacity-0 pointer-events-none"
+                    )}
                   />
-                ) : null}
-                <Image
-                  height={250}
-                  width={250}
-                  src={currentProduct.imageUrl}
-                  alt={currentProduct.name}
-                  className="w-full aspect-square object-contain"
-                />
-                {hasNext ? (
+                  <Image
+                    height={250}
+                    width={250}
+                    src={currentProduct.imageUrl}
+                    alt={currentProduct.name}
+                    className="max-w-3/4 aspect-square object-contain"
+                  />
                   <Image
                     onClick={nextProduct}
                     src={NextProductIcon}
                     alt="prev btn"
-                    className="w-[45px] object-cover object-center h-[250px]"
+                    className={cn(
+                      "w-[45px] object-cover object-center h-[150px] overflow-visible",
+                      hasNext
+                        ? "opacity-100 pointer-events-auto"
+                        : "opacity-0 pointer-events-none"
+                    )}
                   />
-                ) : null}
+                </div>
               </div>
               <div className="px-4 mb-4">
                 <div className="font-bold text-3xl mb-6">
@@ -102,10 +107,7 @@ const ProductDetail: React.FC<ProductDetailProps> = () => {
                     </div>
                   </div>
                 </div>
-                <Button onClick={resetActiveProduct} className="mt-4 w-full px-6 py-[14px] rounded-full flex justify-between h-fit">
-                  <div className="font-medium text-xl">Submit</div>
-                  <div className="font-medium text-xl">Submit</div>
-                </Button>
+                <AddToCartButton />
               </div>
             </>
           ) : null}
