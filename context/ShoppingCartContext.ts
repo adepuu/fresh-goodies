@@ -5,6 +5,8 @@ import { createContext } from "react"
 const defaultValue = {
   items: [],
   products: [],
+  openCart: false,
+  setOpenCart: () => {},
   setProducts: () => {},
   addItem: (product: Product, quantity: number) => {},
   removeItem: (productId: number) => {},

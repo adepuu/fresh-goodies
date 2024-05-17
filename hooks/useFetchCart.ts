@@ -1,10 +1,11 @@
 import { config } from "@/constants/url"
-import { useEffect, useState } from "react"
+import ShoppingCartContext from "@/context/ShoppingCartContext"
+import { Product } from "@/types/product"
+import { useContext, useEffect, useState } from "react"
 
 type cart = {
-  productId: number
+  productId: Product
   quantity: number
-  id: string
 }
 
 const useFetchCart = () => {
@@ -12,6 +13,7 @@ const useFetchCart = () => {
   const [cartAdded, setCartAdded] = useState<number>(0)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<unknown>(null)
+  const { addItem: setAddItems } = useContext(ShoppingCartContext)
 
   const handleAddToCart = async (cart: cart) => {
     try {

@@ -9,7 +9,7 @@ import Image from "next/image"
 import ShoppingCartContext from "@/context/ShoppingCartContext"
 import { Product } from "@/types/product"
 import { IoMdAdd, IoMdRemove } from "react-icons/io"
-import CartCard from "./CartCard"
+import CartCard from "./CartButton"
 
 const DrawerProduct: React.FC<{ id: number; onClose: () => void }> = ({
   id,
@@ -129,9 +129,7 @@ const DrawerProduct: React.FC<{ id: number; onClose: () => void }> = ({
               </button>
             </div>
           </div>
-          <button type='button' title='cart button' onClick={onClose}>
-            <CartCard />
-          </button>
+          <CartCard />
         </div>
       </div>
     </div>

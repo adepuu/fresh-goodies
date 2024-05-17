@@ -9,6 +9,7 @@ const ShoppingCartProvider: React.FC<{ children: JSX.Element | ReactNode }> = ({
 }) => {
   let [items, setItems] = useState<CartItem[]>([])
   let [products, setProducts] = useState<Product[]>([])
+  const [openCart, setOpenCart] = useState<boolean>(false)
 
   const addItem = (product: Product, quantity: number) => {
     setItems((prevItems) => {
@@ -58,6 +59,8 @@ const ShoppingCartProvider: React.FC<{ children: JSX.Element | ReactNode }> = ({
   const value: ShoppingCart = {
     items,
     products,
+    openCart,
+    setOpenCart,
     setProducts,
     addItem,
     removeItem,

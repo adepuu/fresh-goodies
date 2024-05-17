@@ -19,19 +19,17 @@ const ProductCard: React.FC<Product> = (props) => {
   }
 
   return (
-    <div
-      className=' h-full w-full bg-light-white p-3 rounded-xl'
-      onClick={() => handleOpenDetail(props.id)}
-    >
+    <div className=' h-full w-full bg-light-white p-3 rounded-xl'>
       {!errorImage ? (
         <Image
-          className='h-48 w-full object-fill mix-blend-darken'
+          className='h-48 w-full object-cover mix-blend-darken'
           width={300}
           height={300}
           src={props.imageUrl}
-          alt={`${name}-image`}
+          alt={`${props.name}-image`}
           priority={true}
           onError={() => setErrorImage(!errorImage)}
+          onClick={() => handleOpenDetail(props.id)}
         />
       ) : (
         <Image
@@ -40,6 +38,7 @@ const ProductCard: React.FC<Product> = (props) => {
           height={300}
           src={defImg}
           alt={`fallback-image`}
+          onClick={() => handleOpenDetail(props.id)}
         />
       )}
       <div className='text-left'>
@@ -73,10 +72,7 @@ const ProductCard: React.FC<Product> = (props) => {
         </div>
       </div>
       {openDetail ? (
-        <DrawerProduct
-          id={detailId}
-          onClose={() => handleOpenDetail(detailId)}
-        />
+        <DrawerProduct id={detailId} onClose={() => handleOpenDetail(0)} />
       ) : null}
     </div>
   )

@@ -10,7 +10,6 @@ import { CartCard, ProductCard } from "@/components"
 import ShoppingCartContext from "@/context/ShoppingCartContext"
 
 export default function Home() {
-  const { favProd } = useFetchFavProd()
   const { cartList } = useFetchCart()
   const { category } = useFetchProduct()
   const { products } = useContext(ShoppingCartContext)

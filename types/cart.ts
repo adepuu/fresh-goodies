@@ -9,6 +9,8 @@ export interface CartItem {
 export interface ShoppingCart {
   items: CartItem[]
   products: Product[]
+  openCart: boolean
+  setOpenCart: Dispatch<SetStateAction<boolean>>
   setProducts: Dispatch<SetStateAction<Product[]>>
   addItem(product: Product, quantity: number): void
   removeItem(productId: number): void
