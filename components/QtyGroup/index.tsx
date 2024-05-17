@@ -3,10 +3,13 @@ import Add from "../Icons/Add";
 import Deduct from "../Icons/Deduct";
 import useCart from "@/hooks/useCart";
 import { useMemo } from "react";
+import cn from "classnames";
 
-interface QtyGroupProps extends Product {}
+interface QtyGroupProps extends Product {
+  block?: boolean;
+}
 
-const QtyGroup: React.FC<QtyGroupProps> = (product) => {
+const QtyGroup: React.FC<QtyGroupProps> = ({ block, ...product }) => {
   const { id, weight } = product;
   const {
     productCartMap,
@@ -57,33 +60,52 @@ const QtyGroup: React.FC<QtyGroupProps> = (product) => {
   };
 
   return (
-    <div className="w-full flex justify-between items-center">
+    <div
+      className={cn(
+        "w-full flex justify-between items-center",
+        block ? "h-full bg-whitest-white rounded-full px-[10px]" : ""
+      )}
+    >
       {cartItem && cartItem.quantity > 0 ? (
         <>
           <div
             onClick={handleDeductQuantity}
-            className="rounded-full bg-black p-2"
+            className={cn(
+              "rounded-full p-2",
+              block ? "bg-transparent" : "bg-black"
+            )}
           >
-            <Deduct type="light" />
+            <Deduct type={block ? "dark" : "light"} />
           </div>
           <div className="font-normal text-base text-center align-middle h-fit">
             {cartQuantityString}
           </div>
           <div
             onClick={handleAddQuantity}
-            className="rounded-full bg-black p-2"
+            className={cn(
+              "rounded-full p-2",
+              block ? "bg-transparent" : "bg-black"
+            )}
           >
-            <Add type="light" />
+            <Add type={block ? "dark" : "light"} />
           </div>
         </>
       ) : (
         <>
+          {block ? (
+            <div className="rounded-full p-2 bg-transparent pointer-events-none opacity-0">
+              <Deduct type={block ? "dark" : "light"} />
+            </div>
+          ) : null}
           <div className="font-normal text-base text-center align-middle h-fit">
             {cartQuantityString}
           </div>
           <div
             onClick={handleAddItem}
-            className="rounded-full bg-transparent border border-weathered-stone p-2"
+            className={cn(
+              "rounded-full bg-transparent border-weathered-stone p-2",
+              block ? "border-none" : "border"
+            )}
           >
             <Add type="dark" />
           </div>

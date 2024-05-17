@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import ReactQueryProvider from "@/utils/providers/ReactQueryProvider";
 import { CategoryProvider } from "@/context/CategoryContext";
+import { ActiveProductProvider } from "@/context/ActiveProductContext";
 
 
 export const metadata: Metadata = {
@@ -17,9 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ReactQueryProvider>
-        <CategoryProvider>
-          <body className="font-sf-pro-display">{children}</body>
-        </CategoryProvider>
+        <ActiveProductProvider>
+          <CategoryProvider>
+            <body className="font-sf-pro-display">{children}</body>
+          </CategoryProvider>
+        </ActiveProductProvider>
       </ReactQueryProvider>
     </html>
   );
