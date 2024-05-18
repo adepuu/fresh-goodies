@@ -1,6 +1,7 @@
 import CategoryList from "@/components/CategoryList";
 import Header from "@/components/Header";
 import ProductList from "./components/ProductList";
+import ProductDetail from "./components/ProductDetail";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Header />
       <CategoryList />
       <ProductList />
+      <ProductDetail />
     </main>
   );
 }
