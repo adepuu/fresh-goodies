@@ -1,6 +1,56 @@
 {
-  "favorite-products": [{ "productId": 0 }, { "productId": 1 }],
-  "cart": [],
+  "favorite-products": [
+    {
+      "productId": 0
+    },
+    {
+      "productId": 1
+    }
+  ],
+  "cart": [
+    {
+      "id": "fd83",
+      "productId": {
+        "price": 0.0032,
+        "weight": 1000,
+        "name": "Beetles",
+        "category": "Exotic",
+        "imageUrl": "/products/beetles.png",
+        "metadata": {
+          "unit": "g",
+          "weight": 100,
+          "calorie": 190,
+          "proteins": 24,
+          "fats": 9,
+          "increment": 100,
+          "carbs": 2
+        },
+        "id": 0
+      },
+      "quantity": 1000
+    },
+    {
+      "id": "774c",
+      "productId": {
+        "price": 0.004,
+        "weight": 1500,
+        "name": "Lemon",
+        "category": "Fresh Veggie",
+        "imageUrl": "/products/lemon.png",
+        "metadata": {
+          "unit": "g",
+          "weight": 100,
+          "calorie": 29,
+          "proteins": 1.1,
+          "fats": 0.3,
+          "increment": 100,
+          "carbs": 9.3
+        },
+        "id": 3
+      },
+      "quantity": 1000
+    }
+  ],
   "products": [
     {
       "price": 0.0032,

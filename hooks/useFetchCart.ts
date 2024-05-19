@@ -9,12 +9,14 @@ type cart = {
 }
 
 const useFetchCart = () => {
-  // const [cartList, setCartList] = useState<cart[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<unknown>(null)
   const { setItems: setItemsGlobal } = useContext(ShoppingCartContext)
 
-  const handleAddToCart = async (cart: cart) => {
+  const handleAddToCart = async (
+    product: Product,
+    quantity: number
+  ): Promise<boolean> => {
     try {
       setLoading(true)
       const response = await fetch(config.BASE_URL + config.endpoints.cart, {
@@ -22,7 +24,7 @@ const useFetchCart = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(cart),
+        body: JSON.stringify({ productId: product, quantity: quantity }),
       })
       if (!response.ok) {
         throw new Error("Failed to add item to cart.")
@@ -36,6 +38,7 @@ const useFetchCart = () => {
       setError(error)
       setLoading(false)
     }
+    return false
   }
 
   useEffect(() => {

@@ -10,13 +10,15 @@ import ShoppingCartContext from "@/context/ShoppingCartContext"
 import { Product } from "@/types/product"
 import { IoMdAdd, IoMdRemove } from "react-icons/io"
 import CartCard from "./CartButton"
+import useFetchCart from "@/hooks/useFetchCart"
 
 const DrawerProduct: React.FC<{ id: number; onClose: () => void }> = ({
   id,
   onClose,
 }) => {
-  const [productId, setProductId] = useState<number>(id)
   const { products, addItem } = useContext(ShoppingCartContext)
+  const { handleAddToCart } = useFetchCart()
+  const [productId, setProductId] = useState<number>(id)
   const [activeProd, setActiveProd] = useState<Product>(products[id])
   const [weightActive, setWeightActive] = useState<number>(products[id].weight)
   const [isFavorite, setIsFavorite] = useState(false)
@@ -25,9 +27,16 @@ const DrawerProduct: React.FC<{ id: number; onClose: () => void }> = ({
     setActiveProd(products[productId])
   }, [productId])
 
-  const handleToCart = () => {
-    addItem(activeProd, weightActive)
-    onClose
+  const handleToCart = async () => {
+    const result = await handleAddToCart(activeProd, weightActive)
+
+    if (result) {
+      addItem(activeProd, weightActive)
+      onClose
+      return
+    }
+
+    alert("Add to cart failed")
   }
 
   console.log(productId)
