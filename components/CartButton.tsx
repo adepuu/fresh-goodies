@@ -49,7 +49,6 @@ const CartButton: React.FC<{ type: string; onClick: () => void }> = ({
           </>
         </div>
       </button>
-      {openCart ? <DrawerCart /> : null}
     </>
   )
 }

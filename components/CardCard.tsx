@@ -30,12 +30,13 @@ const CardCard: React.FC<CartItem> = (props) => {
   }
 
   return (
-    <div className='flex'>
+    <div className='flex gap-x-2'>
       <Image
         width={110}
         height={100}
         src={props.productId.imageUrl}
         alt={`${props.productId.name}-image`}
+        className='h-20 w-20 object-cover'
       />
       <div className='flex flex-col justify-between w-full'>
         <p>{props.productId.name}</p>

@@ -8,6 +8,7 @@ import "./globals.css"
 import { useContext, useState } from "react"
 import { CartButton, ProductCard } from "@/components"
 import ShoppingCartContext from "@/context/ShoppingCartContext"
+import { DrawerCart } from "@/components"
 
 export default function Home() {
   const { loading } = useFetchCart()
@@ -16,6 +17,7 @@ export default function Home() {
     useContext(ShoppingCartContext)
   const [categoryId, setCategoryId] = useState<number>(0)
 
+  console.log(openCart)
   return (
     <main className='min-h-screen'>
       {loading ? (
@@ -59,8 +61,14 @@ export default function Home() {
             </div>
           </div>
           {items.length > 0 ? (
-            <CartButton type={"Cart"} onClick={() => setOpenCart(!openCart)} />
+            <CartButton
+              type={"Cart"}
+              onClick={() => {
+                setOpenCart(!openCart)
+              }}
+            />
           ) : null}
+          {openCart ? <DrawerCart /> : null}
         </>
       )}
     </main>
