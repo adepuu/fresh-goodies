@@ -9,10 +9,10 @@ type cart = {
 }
 
 const useFetchCart = () => {
-  const [cartList, setCartList] = useState<cart[]>([])
+  // const [cartList, setCartList] = useState<cart[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<unknown>(null)
-  const { addItem: setAddItems } = useContext(ShoppingCartContext)
+  const { setItems: setItemsGlobal } = useContext(ShoppingCartContext)
 
   const handleAddToCart = async (cart: cart) => {
     try {
@@ -46,11 +46,11 @@ const useFetchCart = () => {
         if (!response.ok) {
           throw new Error("Failed to fetch cart.")
         }
-        const data = await response.json()
+        const data = (await response.json()) as cart[]
         // console.log("Cart product:", data)
 
-        setCartList(data)
-
+        // setCartList(data)
+        setItemsGlobal(data)
         setLoading(false)
       } catch (error) {
         setError(error)
@@ -61,7 +61,7 @@ const useFetchCart = () => {
     fetchCart()
   }, [])
 
-  return { cartList, loading, error, handleAddToCart }
+  return { loading, error, handleAddToCart }
 }
 
 export default useFetchCart

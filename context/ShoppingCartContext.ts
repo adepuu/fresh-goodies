@@ -6,6 +6,7 @@ const defaultValue = {
   items: [],
   products: [],
   openCart: false,
+  setItems: () => {},
   setOpenCart: () => {},
   setProducts: () => {},
   addItem: (product: Product, quantity: number) => {},

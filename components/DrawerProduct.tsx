@@ -16,7 +16,8 @@ const DrawerProduct: React.FC<{ id: number; onClose: () => void }> = ({
   onClose,
 }) => {
   const [productId, setProductId] = useState<number>(id)
-  const { products } = useContext(ShoppingCartContext)
+  const { products, openCart, setOpenCart, addItem } =
+    useContext(ShoppingCartContext)
   const [activeProd, setActiveProd] = useState<Product>(products[id])
   const [weightActive, setWeightActive] = useState<number>(products[id].weight)
   const [isFavorite, setIsFavorite] = useState(false)
@@ -24,6 +25,11 @@ const DrawerProduct: React.FC<{ id: number; onClose: () => void }> = ({
   useEffect(() => {
     setActiveProd(products[productId])
   }, [productId])
+
+  const handleToCart = () => {
+    addItem(activeProd, weightActive)
+    onClose
+  }
 
   console.log(productId)
   return (
@@ -129,7 +135,7 @@ const DrawerProduct: React.FC<{ id: number; onClose: () => void }> = ({
               </button>
             </div>
           </div>
-          <CartCard />
+          <CartCard type='To Cart' onClick={handleToCart} />
         </div>
       </div>
     </div>

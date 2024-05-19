@@ -7,9 +7,7 @@ import useFetchCart from "@/hooks/useFetchCart"
 import CardCard from "./CardCard"
 
 const DrawerCart = () => {
-  const { openCart, setOpenCart } = useContext(ShoppingCartContext)
-  const { cartList } = useFetchCart()
-  console.log(cartList)
+  const { items, openCart, setOpenCart } = useContext(ShoppingCartContext)
   return (
     <div className='fixed top-0 bottom-0 left-0 right-0 bg-white h-full z-50 px-4 pt-11'>
       <button onClick={() => setOpenCart(!openCart)} title='close cart button'>
@@ -31,7 +29,7 @@ const DrawerCart = () => {
         </div>
       </div>
       <div>
-        {cartList.map((e, i) => {
+        {items.map((e, i) => {
           return <CardCard key={i} {...e} />
         })}
       </div>

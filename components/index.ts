@@ -1,2 +1,2 @@
 export { default as ProductCard } from "./ProductCard"
-export { default as CartCard } from "./CartButton"
+export { default as CartButton } from "./CartButton"

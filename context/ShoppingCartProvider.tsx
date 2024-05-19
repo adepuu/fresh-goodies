@@ -60,6 +60,7 @@ const ShoppingCartProvider: React.FC<{ children: JSX.Element | ReactNode }> = ({
     items,
     products,
     openCart,
+    setItems,
     setOpenCart,
     setProducts,
     addItem,
