@@ -16,8 +16,7 @@ const DrawerProduct: React.FC<{ id: number; onClose: () => void }> = ({
   onClose,
 }) => {
   const [productId, setProductId] = useState<number>(id)
-  const { products, openCart, setOpenCart, addItem } =
-    useContext(ShoppingCartContext)
+  const { products, addItem } = useContext(ShoppingCartContext)
   const [activeProd, setActiveProd] = useState<Product>(products[id])
   const [weightActive, setWeightActive] = useState<number>(products[id].weight)
   const [isFavorite, setIsFavorite] = useState(false)
