@@ -1,67 +1,6 @@
 {
   "favorite-products": [{ "productId": 0 }, { "productId": 1 }],
-  "cart": [
-    {
-      "productId": {
-        "price": 0.0033,
-        "weight": 1300,
-        "name": "Cucumber",
-        "category": "Fresh Veggie",
-        "imageUrl": "/products/cucumber.png",
-        "metadata": {
-          "unit": "g",
-          "weight": 100,
-          "calorie": 16,
-          "proteins": 0.7,
-          "fats": 0.1,
-          "increment": 100,
-          "carbs": 3.6
-        },
-        "id": 1
-      },
-      "quantity": 1000
-    },
-    {
-      "productId": {
-        "price": 0.0033,
-        "weight": 1300,
-        "name": "Cucumber",
-        "category": "Fresh Veggie",
-        "imageUrl": "/products/red_chili_pepper.jpg",
-        "metadata": {
-          "unit": "g",
-          "weight": 100,
-          "calorie": 16,
-          "proteins": 0.7,
-          "fats": 0.1,
-          "increment": 100,
-          "carbs": 3.6
-        },
-        "id": 1
-      },
-      "quantity": 1000
-    },
-    {
-      "productId": {
-        "price": 0.0033,
-        "weight": 1300,
-        "name": "Cucumber",
-        "category": "Fresh Veggie",
-        "imageUrl": "/products/ranch_dressing.webp",
-        "metadata": {
-          "unit": "g",
-          "weight": 100,
-          "calorie": 16,
-          "proteins": 0.7,
-          "fats": 0.1,
-          "increment": 100,
-          "carbs": 3.6
-        },
-        "id": 1
-      },
-      "quantity": 1000
-    }
-  ],
+  "cart": [],
   "products": [
     {
       "price": 0.0032,
