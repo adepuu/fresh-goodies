@@ -10,7 +10,6 @@ type cart = {
 
 const useFetchCart = () => {
   const [cartList, setCartList] = useState<cart[]>([])
-  const [cartAdded, setCartAdded] = useState<number>(0)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<unknown>(null)
   const { addItem: setAddItems } = useContext(ShoppingCartContext)
@@ -31,7 +30,6 @@ const useFetchCart = () => {
 
       const data = await response.json()
       console.log("Cart added:", data)
-      setCartAdded(cartAdded + 1)
       setLoading(false)
       return true
     } catch (error) {
@@ -52,7 +50,6 @@ const useFetchCart = () => {
         // console.log("Cart product:", data)
 
         setCartList(data)
-        setCartAdded(data.length)
 
         setLoading(false)
       } catch (error) {
@@ -62,7 +59,7 @@ const useFetchCart = () => {
     }
 
     fetchCart()
-  }, [cartAdded])
+  }, [])
 
   return { cartList, loading, error, handleAddToCart }
 }
