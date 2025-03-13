@@ -9,7 +9,8 @@ export const metadata: Metadata = {
 export default function Home() {
   
   return (
-    <main className="">
+    <main className="px-4 py-14">
+      <h1 className="text-4xl font-bold font-sf-pro-display mb-8">Cart</h1>
       <CartList />
     </main>
   );
