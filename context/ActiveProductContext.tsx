@@ -92,7 +92,7 @@ export const ActiveProductProvider: React.FC<{ children: ReactNode }> = ({ child
   return (
     <ActiveProductContext.Provider
       value={{
-        activeProduct,
+        activeProduct: activeProduct,
         setActiveProduct: updateActiveProduct,
         updateProductNavigation,
         productNavigation,

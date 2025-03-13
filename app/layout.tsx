@@ -3,7 +3,7 @@ import "./globals.css";
 import ReactQueryProvider from "@/utils/providers/ReactQueryProvider";
 import { CategoryProvider } from "@/context/CategoryContext";
 import { ActiveProductProvider } from "@/context/ActiveProductContext";
-
+import { SearchAndFilterProvider } from "@/context/SearchAndFilterContext";
 
 export const metadata: Metadata = {
   title: "Fresh Goodies 🥦",
@@ -20,7 +20,9 @@ export default function RootLayout({
       <ReactQueryProvider>
         <ActiveProductProvider>
           <CategoryProvider>
-            <body className="font-sf-pro-display">{children}</body>
+            <SearchAndFilterProvider>
+              <body className="font-sf-pro-display">{children}</body>
+            </SearchAndFilterProvider>
           </CategoryProvider>
         </ActiveProductProvider>
       </ReactQueryProvider>
